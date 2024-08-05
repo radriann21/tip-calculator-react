@@ -4,14 +4,15 @@ export const ResultsSection = () => {
   return (
     <Flex
       as="section"
-      w="50%"
+      w={{ base: '100%', md: '100%', lg: '50%' }}
+      p={{ base: '1.5rem', md: '2rem', lg: '2rem' }}
+      mt={{ base: '.8rem', lg: '0' }}
       h="100%"
       borderRadius="18px"
       bgColor="neutral.veryDarkCyan"
       color="white"
       justifyContent="space-between"
       direction="column"
-      p="2rem"
     >
 
       <Box>
@@ -38,6 +39,7 @@ export const ResultsSection = () => {
         color="neutral.veryDarkCyan" 
         bgColor="primary.strongCyan" 
         textAlign="center" 
+        mt={{ base: '.8rem', lg: '0' }}
         _hover={{ bgColor: 'neutral.lightGrayishCyan' }}>
           Reset
       </Button>

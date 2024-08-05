@@ -7,14 +7,15 @@ export const FormContainer = () => {
     <Flex 
       mt="1rem"
       as="section" 
-      w={{ base: '320px', md: '420px', lg: '840px' }} 
-      h='410px' 
+      w={{ base: '100%', md: '420px', lg: '840px' }} 
+      h={{ base: 'fit-content', md: '410px', lg: '410px' }}
       bgColor='white'
       borderRadius='18px'
-      padding="2rem"
+      padding={{ base: '1rem', md: '2rem', lg: '2rem' }}
       boxShadow="lg"
       align="center"
       justify="space-between"    
+      direction={{ base: 'column', md: 'column', lg: 'row' }}
     >
       <InputSection />
       <ResultsSection />
