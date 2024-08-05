@@ -1,17 +1,14 @@
-import { useState } from 'react'
+import { Grid, Heading } from "@chakra-ui/react"  
+import { FormContainer } from './components/FormContainer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
+    <Grid as="main" maxW="100%" minH="100dvh" placeContent="center" bgColor="neutral.lightGrayishCyan" fontFamily="global">
+      <Heading as="h3" textTransform="uppercase" fontSize="20px" letterSpacing="8px" textAlign="center" color="neutral.veryDarkCyan">
+        Spli <br /> tter
+      </Heading>
+      <FormContainer />
+    </Grid>
   )
 }
 
