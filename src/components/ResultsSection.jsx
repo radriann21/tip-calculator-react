@@ -1,6 +1,11 @@
 import { Box, Text, Button, Flex } from '@chakra-ui/react'
+import { useContext } from 'react'
+import { CalculatorContext } from '../context/CalculatorContext'
 
 export const ResultsSection = () => {
+
+  const { tipAmount, total, reset } = useContext(CalculatorContext)
+
   return (
     <Flex
       as="section"
@@ -21,15 +26,15 @@ export const ResultsSection = () => {
             <Text fontSize="18px" color="white">Tip Amount</Text>
             <Text fontSize="12px" color="neutral.grayishCyan">/ person</Text>
           </Box>
-          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">$0.00</Text>
+          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">${tipAmount.toFixed(2)}</Text>
         </Flex>
         
         <Flex justify="space-between">
           <Box>
-            <Text fontSize="18px" color="white">Tip Amount</Text>
+            <Text fontSize="18px" color="white">Total</Text>
             <Text fontSize="12px" color="neutral.grayishCyan">/ person</Text>
           </Box>
-          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">$0.00</Text>
+          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">${total.toFixed(2)}</Text>
         </Flex>
       </Box>
 
@@ -40,7 +45,9 @@ export const ResultsSection = () => {
         bgColor="primary.strongCyan" 
         textAlign="center" 
         mt={{ base: '.8rem', lg: '0' }}
-        _hover={{ bgColor: 'neutral.lightGrayishCyan' }}>
+        _hover={{ bgColor: 'neutral.lightGrayishCyan' }}
+        onClick={reset}  
+      >
           Reset
       </Button>
     </Flex>

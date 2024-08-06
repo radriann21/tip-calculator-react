@@ -1,0 +1,7 @@
+export const actionTypes = Object.freeze({
+  SET_BILL: 'SET_BILL',
+  SET_PERCENTAGE: 'SET_PERCENTAGE',
+  SET_NUM_PEOPLE: 'SET_NUM_PEOPLE',
+  CALCULATE: 'CALCULATE',
+  RESET: 'RESET'
+})

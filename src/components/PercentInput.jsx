@@ -1,6 +1,10 @@
 import { FormControl, FormLabel, Grid, GridItem, Button, Input } from '@chakra-ui/react'
+import { useContext } from 'react'
+import { CalculatorContext } from '../context/CalculatorContext'
 
 export const PercentInput = () => {
+
+  const { setPercent, getButtonValue } = useContext(CalculatorContext)
 
   const buttons = [
     {
@@ -44,6 +48,8 @@ export const PercentInput = () => {
                 data-value={button.value}
                 w={{ base: '70px', lg: '100px' }}
                 _hover={{ bgColor: 'neutral.lightGrayishCyan', color: 'neutral.veryDarkCyan' }}
+                _active={{ bgColor: 'primary.strongCyan', color: 'neutral.veryDarkCyan' }}
+                onClick={(e) => getButtonValue(e)}
               >
                 {button.text}
               </Button>
@@ -51,7 +57,17 @@ export const PercentInput = () => {
           ))
         }
         <GridItem w="full">
-          <Input variant="filled" textAlign="right" fontWeight="bold" w={{ base: '70px', lg: '100px' }} placeholder="Custom" focusBorderColor="primary.strongCyan" _focus={{ bgColor: 'neutral.veryLightGrayishCyan' }} />
+          <Input 
+            variant="filled" 
+            type="number"
+            textAlign="right" 
+            fontWeight="bold" 
+            w={{ base: '70px', lg: '100px' }} 
+            placeholder="Custom" 
+            focusBorderColor="primary.strongCyan" 
+            _focus={{ bgColor: 'neutral.veryLightGrayishCyan' }} 
+            onChange={(e) => setPercent(e)}
+          />
         </GridItem>
       </Grid>
     </FormControl>
