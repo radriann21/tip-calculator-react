@@ -11,7 +11,7 @@ export const ResultsSection = () => {
       as="section"
       w={{ base: '100%', md: '100%', lg: '50%' }}
       p={{ base: '1.5rem', md: '2rem', lg: '2rem' }}
-      mt={{ base: '.8rem', lg: '0' }}
+      mt={{ base: '1.2rem', lg: '0' }}
       h="100%"
       borderRadius="18px"
       bgColor="neutral.veryDarkCyan"
@@ -23,20 +23,20 @@ export const ResultsSection = () => {
       <Box>
         <Flex justify="space-between" mb="2rem">
           <Box>
-            <Text fontSize="18px" color="white">Tip Amount</Text>
-            <Text fontSize="12px" color="neutral.grayishCyan">/ person</Text>
+            <Text fontSize={{ sm:'14px', base: '14px', md: '14px', lg: '20px' }} color="white">Tip Amount</Text>
+            <Text fontSize={{ sm:'10px', base: '10px', md: '10px', lg: '14px' }} color="neutral.grayishCyan">/ person</Text>
           </Box>
-          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">
+          <Text fontSize={{ sm:'16px', base: '20px', md: '20px', lg: '35px' }} fontWeight="bold" color="primary.strongCyan">
             ${isNaN(tipAmount) ? '0.00' : tipAmount.toFixed(2)}
           </Text>
         </Flex>
         
         <Flex justify="space-between">
           <Box>
-            <Text fontSize="18px" color="white">Total</Text>
-            <Text fontSize="12px" color="neutral.grayishCyan">/ person</Text>
+            <Text fontSize={{ sm:'14px', base: '14px', md: '14px', lg: '20px' }} color="white">Total</Text>
+            <Text fontSize={{ sm:'10px', base: '10px', md: '10px', lg: '14px' }} color="neutral.grayishCyan">/ person</Text>
           </Box>
-          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">
+          <Text fontSize={{ sm:'16px', base: '20px', md: '20px', lg: '35px' }} fontWeight="bold" color="primary.strongCyan">
             ${isNaN(total) ? '0.00' : total.toFixed(2)}
           </Text>
         </Flex>

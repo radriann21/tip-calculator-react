@@ -9,7 +9,7 @@ export const BillInput = () => {
 
   return (
     <FormControl as="section" mb="1rem">
-      <FormLabel fontSize="14px" color="neutral.grayishCyan" fontWeight="bold">Bill</FormLabel>
+      <FormLabel fontSize={{ sm:'12px', base: '12px', md: '14px', lg: '14px' }} color="neutral.grayishCyan" fontWeight="bold">Bill</FormLabel>
       <InputGroup>
         <InputLeftElement>
           <FaDollarSign />

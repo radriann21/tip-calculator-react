@@ -36,7 +36,7 @@ export const PercentInput = () => {
 
   return (
     <FormControl as="section" mb="1rem">
-      <FormLabel fontSize="14px" color="neutral.grayishCyan" fontWeight="bold">Select Tip %</FormLabel>
+      <FormLabel fontSize={{ sm:'12px', base: '12px', md: '14px', lg: '14px' }} color="neutral.grayishCyan" fontWeight="bold">Select Tip %</FormLabel>
       <Grid w="100%" as="section" mt="1rem" gridTemplateColumns="repeat(3, 1fr)" gridTemplateRows="repeat(2, 1fr)" gap="15px">
         {
           buttons.map((button) => (

@@ -11,8 +11,8 @@ export const PeopleInput = () => {
   return (
     <FormControl isInvalid={isError} as="section">
       <Flex w="100%" justify="space-between" align="center">
-        <FormLabel fontWeight="bold" fontSize="14px" color="neutral.grayishCyan">Number of People</FormLabel>
-        {!isError ? null : <FormErrorMessage fontWeight="bold" fontSize="14px">Can&apos;t be Zero!</FormErrorMessage>}
+        <FormLabel fontWeight="bold" fontSize={{ sm:'12px', base: '12px', md: '14px', lg: '14px' }} color="neutral.grayishCyan">Number of People</FormLabel>
+        {!isError ? null : <FormErrorMessage fontWeight="bold" fontSize={{ sm:'10px', base: '10px', md: '14px', lg: '14px' }}>Can&apos;t be Zero!</FormErrorMessage>}
       </Flex>
       <InputGroup>
         <InputLeftElement>
