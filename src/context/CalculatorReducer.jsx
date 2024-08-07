@@ -1,4 +1,13 @@
+/* eslint-disable react-refresh/only-export-components */
 import { actionTypes } from "./actionTypes"
+
+export const initialState = {
+  bill: 0.00,
+  percentage: 0,
+  numberPeople: 0,
+  tipAmount: 0.00,
+  total: 0.00
+}
 
 export const CalculatorReducer = (state, action) => {
   switch(action.type) {
@@ -17,9 +26,27 @@ export const CalculatorReducer = (state, action) => {
         ...state,
         numberPeople: action.payload
       }
+    case actionTypes.CALCULATE: {
+      if (state.numberPeople === 0 || state.numberPeople === "") {
+        return {
+          ...state,
+          tipAmount: 0,
+          total: 0
+        }
+      }
+
+      const tip = ((state.bill / 100) * state.percentage) / state.numberPeople
+      const total = (state.bill / state.numberPeople) + tip
+
+      return {
+        ...state,
+        tipAmount: tip,
+        total: total
+      }
+    }
     case actionTypes.RESET: 
       return {
-        ...action.payload
+        ...initialState
       }
     default: 
       return state

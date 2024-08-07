@@ -1,15 +1,19 @@
-import { FormControl, FormLabel, InputGroup, InputLeftElement, Input } from '@chakra-ui/react'
+import { Flex, FormControl, FormLabel, InputGroup, InputLeftElement, Input, FormErrorMessage } from '@chakra-ui/react'
 import { FaUserAlt } from 'react-icons/fa'
 import { useContext } from 'react'
 import { CalculatorContext } from '../context/CalculatorContext'
 
 export const PeopleInput = () => {
 
-  const { setNumberPeople } = useContext(CalculatorContext)
+  const { setNumberPeople, numberPeople } = useContext(CalculatorContext)
+  const isError = numberPeople == 0
 
   return (
-    <FormControl as="section">
-      <FormLabel fontWeight="bold" fontSize="14px" color="neutral.grayishCyan">Number of People</FormLabel>
+    <FormControl isInvalid={isError} as="section">
+      <Flex w="100%" justify="space-between" align="center">
+        <FormLabel fontWeight="bold" fontSize="14px" color="neutral.grayishCyan">Number of People</FormLabel>
+        {!isError ? null : <FormErrorMessage fontWeight="bold" fontSize="14px">Can&apos;t be Zero!</FormErrorMessage>}
+      </Flex>
       <InputGroup>
         <InputLeftElement>
           <FaUserAlt />
@@ -23,7 +27,7 @@ export const PeopleInput = () => {
           color="neutral.veryDarkCyan"
           focusBorderColor="primary.strongCyan"
           placeholder="0"
-          onClick={(e) => setNumberPeople(e)}
+          onChange={(e) => setNumberPeople(e)}
         />
       </InputGroup>
     </FormControl>
