@@ -5,7 +5,7 @@ import { CalculatorContext } from "../context/CalculatorContext"
 
 export const BillInput = () => {
 
-  const { setBill } = useContext(CalculatorContext  )
+  const { bill, setBill } = useContext(CalculatorContext  )
 
   return (
     <FormControl as="section" mb="1rem">
@@ -24,6 +24,7 @@ export const BillInput = () => {
           focusBorderColor="primary.strongCyan"
           placeholder="0"
           onChange={(e) => setBill(e)}
+          value={bill}
         />
       </InputGroup>
     </FormControl>

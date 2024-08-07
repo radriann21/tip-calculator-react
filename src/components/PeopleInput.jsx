@@ -6,7 +6,7 @@ import { CalculatorContext } from '../context/CalculatorContext'
 export const PeopleInput = () => {
 
   const { setNumberPeople, numberPeople } = useContext(CalculatorContext)
-  const isError = numberPeople == 0
+  const isError = numberPeople === 0 || numberPeople === ""
 
   return (
     <FormControl isInvalid={isError} as="section">
@@ -26,8 +26,9 @@ export const PeopleInput = () => {
           fontWeight="bold"
           color="neutral.veryDarkCyan"
           focusBorderColor="primary.strongCyan"
-          placeholder="0"
+          placeholder="1"
           onChange={(e) => setNumberPeople(e)}
+          value={numberPeople}
         />
       </InputGroup>
     </FormControl>

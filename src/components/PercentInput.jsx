@@ -4,7 +4,7 @@ import { CalculatorContext } from '../context/CalculatorContext'
 
 export const PercentInput = () => {
 
-  const { setPercent, getButtonValue } = useContext(CalculatorContext)
+  const { percentage, setPercent, getButtonValue } = useContext(CalculatorContext)
 
   const buttons = [
     {
@@ -67,6 +67,7 @@ export const PercentInput = () => {
             focusBorderColor="primary.strongCyan" 
             _focus={{ bgColor: 'neutral.veryLightGrayishCyan' }} 
             onChange={(e) => setPercent(e)}
+            value={percentage}
           />
         </GridItem>
       </Grid>

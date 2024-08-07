@@ -26,7 +26,9 @@ export const ResultsSection = () => {
             <Text fontSize="18px" color="white">Tip Amount</Text>
             <Text fontSize="12px" color="neutral.grayishCyan">/ person</Text>
           </Box>
-          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">${tipAmount.toFixed(2)}</Text>
+          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">
+            ${isNaN(tipAmount) ? '0.00' : tipAmount.toFixed(2)}
+          </Text>
         </Flex>
         
         <Flex justify="space-between">
@@ -34,7 +36,9 @@ export const ResultsSection = () => {
             <Text fontSize="18px" color="white">Total</Text>
             <Text fontSize="12px" color="neutral.grayishCyan">/ person</Text>
           </Box>
-          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">${total.toFixed(2)}</Text>
+          <Text fontSize="30px" fontWeight="bold" color="primary.strongCyan">
+            ${isNaN(total) ? '0.00' : total.toFixed(2)}
+          </Text>
         </Flex>
       </Box>
 

@@ -23,19 +23,19 @@ export const CalculatorContextProvider = ({ children }) => {
   }
 
   const setPercent = (e) => {
-    const percent = e.target.value
+    const percent = parseInt(e.target.value)
     dispatch({ type: actionTypes.SET_PERCENTAGE, payload: percent })
     dispatch({ type: actionTypes.CALCULATE })
   } 
 
   const setNumberPeople = (e) => {
-    const people = e.target.value
+    const people = parseInt(e.target.value)
     dispatch({ type: actionTypes.SET_NUM_PEOPLE, payload: people })
     dispatch({ type: actionTypes.CALCULATE })
   }
 
   const reset = () => {
-    dispatch({ type: actionTypes.RESET, payload: initialState })
+    dispatch({ type: actionTypes.RESET })
   }
 
   return (

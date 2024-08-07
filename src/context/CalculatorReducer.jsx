@@ -2,11 +2,11 @@
 import { actionTypes } from "./actionTypes"
 
 export const initialState = {
-  bill: 0.00,
-  percentage: 0,
-  numberPeople: 0,
-  tipAmount: 0.00,
-  total: 0.00
+  bill: "",
+  percentage: "",
+  numberPeople: 1,
+  tipAmount: 0,
+  total: 0
 }
 
 export const CalculatorReducer = (state, action) => {
@@ -46,7 +46,12 @@ export const CalculatorReducer = (state, action) => {
     }
     case actionTypes.RESET: 
       return {
-        ...initialState
+        ...state,
+        bill: "",
+        percentage: "",
+        numberPeople: 1,
+        tipAmount: 0,
+        total: 0
       }
     default: 
       return state
